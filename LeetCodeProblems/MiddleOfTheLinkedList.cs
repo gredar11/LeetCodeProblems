@@ -8,6 +8,7 @@ namespace LeetCodeProblems
 {
     public class MiddleOfTheLinkedList
     {
+        // https://leetcode.com/problems/middle-of-the-linked-list/
         public class ListNode
         {
             public int val;

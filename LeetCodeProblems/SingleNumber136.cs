@@ -8,6 +8,7 @@ namespace LeetCodeProblems
 {
     public class SingleNumber136
     {
+        //https://leetcode.com/problems/single-number/
         public static int SingleNumber(int[] nums)
         {
             Dictionary<int, int> result = new Dictionary<int, int>();

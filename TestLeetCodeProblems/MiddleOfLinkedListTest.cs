@@ -13,6 +13,9 @@ namespace TestLeetCodeProblems
         [Fact]
         public void Test1()
         {
+            var dictionary = new Dictionary<int , int>();
+           
+
             var algo = new MiddleOfTheLinkedList();
             var node5 = new ListNode(5, null);
             var node4 = new ListNode(4, node5);
