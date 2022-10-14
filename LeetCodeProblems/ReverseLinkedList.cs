@@ -9,32 +9,31 @@ namespace LeetCodeProblems
 {
     public class ReverseLinkedList
     {
+        // source: https://leetcode.com/problems/reverse-linked-list/submissions/
         public ListNode ReverseList(ListNode head)
         {
-            ListNode currentNode = head;
-            while (currentNode != null)
+            ListNode previous = null;
+            while (head != null)
             {
-                var tempNode = currentNode.next;
-                if (currentNode == head)
-                    currentNode.next = null;
-                if (tempNode != null)
-                {
-                    var tempForCurrent = tempNode.next;
-                    tempNode.next = currentNode;
-                    if (tempForCurrent != null)
-                    {
-                        tempForCurrent.next = tempNode;
-                        currentNode = tempForCurrent;
-                        continue;
-                    }
-                    break;
-                }
-                else
-                {
-                    break;
-                }
+                var next = head.next;
+                head.next = previous;
+                previous = head;
+                head = next;
             }
-            return currentNode;
+            return previous;
+        }
+        public static ListNode CreateListNodes(int count)
+        {
+            if (count < 1)
+                throw new ArgumentException("Count must be greater than zero.");
+            ListNode listNode = new(1);
+            ListNode next = listNode;
+            for (int i = 1; i < count; i++)
+            {
+                next.next = new ListNode(i + 1);
+                next = next.next;
+            }
+            return listNode;
         }
     }
 }
