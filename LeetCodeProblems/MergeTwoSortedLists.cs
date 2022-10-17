@@ -33,33 +33,23 @@ namespace LeetCodeProblems
             {
                 if (firstPointer.val < secondPointer.val)
                 {
-                    while (firstPointer.next != null && firstPointer.next.val < secondPointer.val)
+                    while (firstPointer.next != null && firstPointer.next.val <= secondPointer.val)
                     {
-                        firstPointer = firstPointer.next;
-                        while (firstPointer.next != null && firstPointer.next.val == firstPointer.val)
-                            firstPointer = firstPointer.next;
+                        firstPointer = firstPointer.next;    
                     }
-                    var temp = firstPointer.next;
+                    var tempfirst = firstPointer.next;
                     firstPointer.next = secondPointer;
-                    var temp2 = secondPointer.next;
-                    secondPointer.next = temp;
-                    firstPointer = firstPointer.next;
-                    secondPointer = temp2;
+                    firstPointer = tempfirst;
                 }
-                else
+                if(secondPointer.val < firstPointer.val)
                 {
-                    while (secondPointer.next != null && secondPointer.next.val < firstPointer.val)
+                    while (secondPointer.next != null && secondPointer.next.val <= firstPointer.val)
                     {
                         secondPointer = secondPointer.next;
-                        while (secondPointer.next != null && secondPointer.next.val == secondPointer.val)
-                            secondPointer = secondPointer.next;
                     }
-                    var temp = secondPointer.next;
+                    var tempSecond = secondPointer.next;
                     secondPointer.next = firstPointer;
-                    var temp2 = firstPointer.next;
-                    firstPointer.next = temp;
-                    firstPointer = temp2;
-                    secondPointer = secondPointer.next;
+                    secondPointer = tempSecond;
                 }
             }
 
