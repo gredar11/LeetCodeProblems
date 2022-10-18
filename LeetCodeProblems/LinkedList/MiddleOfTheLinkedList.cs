@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCodeProblems
+namespace LeetCodeProblems.LinkedList
 {
     public class MiddleOfTheLinkedList
     {
@@ -24,7 +24,7 @@ namespace LeetCodeProblems
         {
             var currentNode = head;
             int indexOfLast = 1;
-            while(currentNode.next != null)
+            while (currentNode.next != null)
             {
                 currentNode = currentNode.next;
                 indexOfLast++;
@@ -32,7 +32,7 @@ namespace LeetCodeProblems
             int middleIndex = indexOfLast / 2 + 1;
             currentNode = head;
             indexOfLast = 1;
-            while(indexOfLast != middleIndex)
+            while (indexOfLast != middleIndex)
             {
                 currentNode = currentNode.next;
                 indexOfLast++;

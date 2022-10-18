@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCodeProblems
+namespace LeetCodeProblems.Arrays
 {
     public class Convert1dArrayInto2D
     {
@@ -12,7 +12,7 @@ namespace LeetCodeProblems
         {
             int[][] array = new int[m][];
             if (m * n != original.Length)
-                return new int[0][] ;
+                return new int[0][];
             int indexInOriginal = 0;
             for (int row = 0; row < m; row++)
             {

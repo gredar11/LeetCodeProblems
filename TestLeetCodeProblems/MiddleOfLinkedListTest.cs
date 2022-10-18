@@ -1,10 +1,10 @@
-﻿using LeetCodeProblems;
+﻿using LeetCodeProblems.LinkedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static LeetCodeProblems.MiddleOfTheLinkedList;
+using static LeetCodeProblems.LinkedList.MiddleOfTheLinkedList;
 
 namespace TestLeetCodeProblems
 {

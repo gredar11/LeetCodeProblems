@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCodeProblems
+namespace LeetCodeProblems.Arrays
 {
     public class SquaresOfASortedArray
     {
@@ -76,28 +76,28 @@ namespace LeetCodeProblems
                     continue;
                 }
             }
-            if(leftCounter == -1)
+            if (leftCounter == -1)
             {
                 // двигаемся вправо
-                while(rightCounter <= nums.Length - 1)
+                while (rightCounter <= nums.Length - 1)
                 {
                     result[mainCounter] = nums[rightCounter] * nums[rightCounter];
                     mainCounter++;
                     rightCounter++;
                 }
             }
-            
-            if(rightCounter == nums.Length)
+
+            if (rightCounter == nums.Length)
             {
                 // двигаемся влево
-                while(leftCounter >= 0)
+                while (leftCounter >= 0)
                 {
                     result[mainCounter] = nums[leftCounter] * nums[leftCounter];
                     mainCounter++;
                     leftCounter--;// сдвиг влево
                 }
             }
-            
+
             return result;
         }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCodeProblems
+namespace LeetCodeProblems.Arrays
 {
     public class SingleNumber136
     {
@@ -16,7 +16,7 @@ namespace LeetCodeProblems
             {
                 if (!result.ContainsKey(num))
                     result[num] = 0;
-                result[num] +=1;
+                result[num] += 1;
             }
             var res = result.Where(num => num.Value == 1).SingleOrDefault();
             return res.Key;

@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static LeetCodeProblems.LinkedListCycle;
+using static LeetCodeProblems.LinkedList.LinkedListCycle;
 
-namespace LeetCodeProblems
+namespace LeetCodeProblems.LinkedList
 {
     public class MergeTwoSortedLists
     {
         public ListNode ConvertArrayToListNode(int[] array)
         {
             ListNode node = new ListNode(array[^1]);
-            for (int i = array.Length - 2 ; i >= 0; i--)
+            for (int i = array.Length - 2; i >= 0; i--)
             {
                 var temp = new ListNode(array[i]) { next = node };
                 node = temp;
@@ -35,13 +35,13 @@ namespace LeetCodeProblems
                 {
                     while (firstPointer.next != null && firstPointer.next.val <= secondPointer.val)
                     {
-                        firstPointer = firstPointer.next;    
+                        firstPointer = firstPointer.next;
                     }
                     var tempfirst = firstPointer.next;
                     firstPointer.next = secondPointer;
                     firstPointer = tempfirst;
                 }
-                if(secondPointer.val < firstPointer.val)
+                if (secondPointer.val < firstPointer.val)
                 {
                     while (secondPointer.next != null && secondPointer.next.val <= firstPointer.val)
                     {

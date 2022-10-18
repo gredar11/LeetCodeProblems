@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static LeetCodeProblems.LinkedListCycle;
+using static LeetCodeProblems.LinkedList.LinkedListCycle;
 
-namespace LeetCodeProblems
+namespace LeetCodeProblems.LinkedList
 {
     public class RemoveDuplicatesFromSortedLinkedList
     {
@@ -14,7 +14,7 @@ namespace LeetCodeProblems
         {
             var currentNode = head?.next;
             var previous = head;
-            while(currentNode != null)
+            while (currentNode != null)
             {
                 var next = currentNode.next;
                 if (currentNode.val == previous.val)
