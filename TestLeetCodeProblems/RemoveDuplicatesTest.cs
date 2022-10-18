@@ -13,7 +13,7 @@ namespace TestLeetCodeProblems
         [Fact]
         public void TestMethod()
         {
-            var helper = new RemoveDuplicatesFromSortedLinkedList();
+            var helper = new RemoveElementWithSameValueInLL();
             
             ListNode n3 = new ListNode(1);
             ListNode n2 = new ListNode(1) { next = n3 };
