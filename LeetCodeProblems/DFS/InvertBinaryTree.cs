@@ -23,13 +23,20 @@ namespace LeetCodeProblems.DFS
         public TreeNode InvertTree(TreeNode root)
         {
             var newRoot = root;
-            int layer = 0;
+            int layer = 1;
             TreeNode[] roots = new TreeNode[1] {root};
             while(roots.All(x => x is null))
             {
-                int countOfNodes = (int)Math.Pow(2.0, layer);
-                int
-
+                int countOfChildren = (int)Math.Pow(2.0, layer);
+                TreeNode[] children = new TreeNode[countOfChildren];
+                for(int i = 0; i < countOfChildren; i+=2)
+                {
+                    int parentIndex = i / 2;
+                    var temp = children[i]; // left
+                    roots[parentIndex].left = roots[parentIndex].right;
+                    roots[parentIndex].right = temp;
+                }
+                layer++;
             }
         }
     }
