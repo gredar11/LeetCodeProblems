@@ -22,22 +22,27 @@ namespace LeetCodeProblems.DFS
         }
         public TreeNode InvertTree(TreeNode root)
         {
-            var newRoot = root;
             int layer = 1;
             TreeNode[] roots = new TreeNode[1] {root};
-            while(roots.All(x => x is null))
+            while(roots.Any(x => x is not null))
             {
                 int countOfChildren = (int)Math.Pow(2.0, layer);
                 TreeNode[] children = new TreeNode[countOfChildren];
                 for(int i = 0; i < countOfChildren; i+=2)
                 {
                     int parentIndex = i / 2;
-                    var temp = children[i]; // left
+                    if (roots[parentIndex] is null)
+                        continue;
+                    var temp = roots[parentIndex].left; // left
                     roots[parentIndex].left = roots[parentIndex].right;
                     roots[parentIndex].right = temp;
+                    children[i] = roots[parentIndex].left;
+                    children[i+1] = roots[parentIndex].right;
                 }
+                roots = children;
                 layer++;
             }
+            return root;
         }
     }
 }
